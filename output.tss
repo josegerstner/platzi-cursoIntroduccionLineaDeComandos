@@ -1,0 +1,14 @@
+total 24K
+-rw-rw-r-- 1 josegerstner josegerstner    0 ene 31 13:40 abc
+drwxrwxr-x 2 josegerstner josegerstner 4,0K ene 31 13:51 CarpetaPuebas
+-rw-rw-r-- 1 josegerstner josegerstner    0 ene 31 13:40 datos1
+-rw-rw-r-- 1 josegerstner josegerstner    0 ene 31 13:40 datos123
+-rw-rw-r-- 1 josegerstner josegerstner    0 ene 31 13:40 dot2.txt
+-rw-rw-r-- 1 josegerstner josegerstner    0 ene 31 13:40 dot.txt
+-rw-rw-r-- 1 josegerstner josegerstner    0 ene 31 13:40 file.txt
+-rw-rw-r-- 1 josegerstner josegerstner    0 ene 31 13:40 index.html
+-rw-rw-r-- 1 josegerstner josegerstner   90 ene 31 14:17 misarchivos.txt
+drwxrwxr-x 2 josegerstner josegerstner 4,0K ene 31 13:54 otraCarpeta
+-rw-rw-r-- 1 josegerstner josegerstner    0 ene 31 14:39 output.tss
+-rw-rw-r-- 1 josegerstner josegerstner  146 ene 31 14:20 output.txt
+-rw-rw-r-- 1 josegerstner josegerstner 5,3K ene 31 14:39 README.md
