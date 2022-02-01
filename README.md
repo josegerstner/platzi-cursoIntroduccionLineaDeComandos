@@ -72,3 +72,60 @@ TIP: esto es muy utilizado en los logs para definir los estados: [“ok”, “w
 - ls **&** date **&** cal: **&** ejecuta los comandos de forma asíncrona, no espera que se terminen de ejecutar los comandos anteriores para ejecutar los siguientes.  
 - mkdir test **&&** cd test: **&&** ejecuta los comandos de forma condicional, si se ejecuta el primer comando satisfactoriamente, se ejecutará el siguiente.  
 - cd testt **||** echo "Hola mundo": **||** ejecuta los comandos de forma síncrona sin importar si el primero se ejecutó satisfactoriamente o no.  
+  
+## Permisos  
+- **chmod** u-r _archivo_: estoy diciendo que al _archivo_ le sacamos (**-**) los permisos de lectura (**r**) para el usuario.  
+- **chmod** u+r _archivo_: estoy diciendo que al _archivo_ le agregamos (**+**) los permisos de lectura para el usuario.  
+- **chmod** u-x,go=w _archivo_: estoy diciendo que al _archivo_ le sacamos los permisos de ejecución (**w**) para el usuario, al grupo (**g**) y a otros (**o**) le seteamos sólo permisos de escritura (ojo, cuando hacemos go=w estamos sobreescribiendo los permisos).  
+- **whoami**: nos dice cuál es el usuario actual.  
+- **id**: me devuelve el _uid_, el _guid_ y los grupos a los que pertenece el usuario.  
+  
+## Variables de Entorno  
+- **ln -s** _ruta_ _nombreLink_: crea un _link simbólico_ (acceso directo) hacia la _ruta_ con _nombreLink_.  
+> - $HOME es la variable de entorno que tiene la ruta de la carpeta home del usuario.  
+  
+> En el archivo **.bashrc** (Linux) se encuentra la configuración de _bash_. Acá podemos agregar variables, alias, etc. que queramos usar globalmente.  
+Para declarar una variable dentro de este archivo debemos escribir en una nueva línea NOMBRE_VARIABLE=..., luego la usaremos en el bash como $NOMBRE_VARIABLE.  
+  
+## Comandos de búsqueda  
+- **which** _algo_: busca binarios dentro de las rutas del $PATH.  
+- **find** _directorio_ **-name** _file_: busca un archivo llamado _file_ a partir de un _directorio_.  
+> También permite utilizar wildcards:  
+> **find** _directorio_ **-name** "*.txt": buscará todos los archivos .txt desde el _directorio_.  
+>  
+> Puedo indicar el tipo archivo que quiero buscar:  
+> **find** _directorio_ **-type** d **-name** _nombre_: con la letra **f** buscará desde el _directorio_ los directorios llamados _nombre_. Si en lugar de **-type d** ponemos **-type f** sólo me buscará los archivos llamados _nombre_.  
+>  
+> Puedo buscar archivos por tamaño:  
+> **find** _directorio_ **-size** _tamaño_  
+  
+## Grep  
+> Nos permite hacer búsquedas dentro de un archivo.  
+- **grep** _texto_ _archivo_: devuelve las líneas donde coincida el _texto_ dentro del _archivo_.  
+- **grep** -i _texto_ _archivo_: devuelve las líneas donde coincida el _texto_ dentro del _archivo_ pero ignorando el _case sensitive_.  
+- **grep** -c _texto_ _archivo_: devuelve la cantidad de veces que aparece el _texto_ en el _archivo_.  
+- **grep** -vi _texto_ _archivo_: devuelve las líneas donde NO coincida el _texto_ dentro del _archivo_ ignorando el _case sensitive_.  
+  
+## Utilidades de red  
+- **ifconfig**: muestra información de nuestra red.  
+- **ping** _página_: permite ver si puedo conectarme a una _página_ o _ip_.  
+- **curl** _página_: devuelve el contenido de una _página_.  
+- **wget** _página_: descarga el contenido de una _página_.  
+- **traceroute** _página_: devuelve todas las computadoras que intervienen hasta llegar a una _página_.  
+- **netstat -i**: nos muestra los dispositivos de red.  
+  
+## Comprimiendo archivos  
+- **tar -cvf** _archivoComprimido_.tar _carpetaAComprimir_: comprime una _carpetaAComprimir_ dando como resultado un archivo llamado _archivoComprimido_ con la extensión .tar. El **-cvf** significan **c**ompression, **v**erbose y **f**ile.  
+- **tar -cvzf** _archivoComprimido_.tar.gz _carpetaAComprimir_: comprime una _carpetaAComprimir_ dando como resultado un archivo llamado _archivoComprimido_ con la extensión .tar.gz. El **-cvzf** significan **c**ompression, **v**erbose, g**z**ip y **f**ile. Tiene una mejor compresión que .tar.  
+- **tar -xvzf** _archivoComprimido_.tar.gz: extrae un archivo llamado _archivoComprimido_.tar.gz. La **x** significa que va a descomprimir.  
+  
+- **zip -r** _archivoComprimido_.zip _carpetaAComprimir_: comprime una _carpetaAComprimir_ dando como resultado un archivo llamado _archivoComprimido_ con la extensión .zip. El **-r** significa de manera recursiva.  
+- **unzip** _archivoComprimido_.zip: extrae el contenido de el _archivoComprimido_.zip.  
+  
+## Manejo de procesos  
+- **ps**: muestra los procesos que están corriendo en la terminal.  
+- **kill** _pid_: mata el proceso con _process id_ igual a _pid_.  
+- **top**: muestra los procesos que más consumen corriendo en el equipo.  
+  
+## Editores en la terminal  
+### VIM  
